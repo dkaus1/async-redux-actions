@@ -6,11 +6,13 @@ import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import rootReducer  from  './reducers';
+import thunk  from  'redux-thunk'
+import { applyMiddleware } from 'redux';
 
 const store = createStore(
                 rootReducer,
                 compose(
-                 
+                 applyMiddleware(thunk),
               window.__REDUX_DEVTOOLS_EXTENSION__ &&
                 window.__REDUX_DEVTOOLS_EXTENSION__(),
             )
