@@ -3,9 +3,9 @@ console.log("actionTypes", actionTypes)
 
 
 export const increment = ()  => ({
-    type: actionTypes.INCREMENT
+    type: actionTypes.counter.INCREMENT
 });
 
 export const decrement = ()  => ({
-    type: actionTypes.DECREMENT
+    type: actionTypes.counter.DECREMENT
 });
