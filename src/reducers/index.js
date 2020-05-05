@@ -1,8 +1,8 @@
-import counterReducer  from './counterReducer';
+import sagaReducer  from './sagaReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-    counter: counterReducer,
+    saga: sagaReducer,
 });
 
 export default rootReducer;
