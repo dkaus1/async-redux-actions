@@ -5,7 +5,7 @@ const actionTypes = {
 		INCREMENT: null,
 		DECREMENT: null,
     }),
-    saga: keyMirror({
+    ob: keyMirror({
 		FETCH_USERS_REQUEST: null,
         FETCH_USERS_SUCCESS: null,
         FETCH_USERS_ERROR: null,

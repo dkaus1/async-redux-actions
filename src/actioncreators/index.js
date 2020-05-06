@@ -10,17 +10,17 @@ export const decrement = ()  => ({
     type: actionTypes.counter.DECREMENT
 });
 
-export const sagaFetchUserRequest = () => ({
-    type: actionTypes.saga.FETCH_USERS_REQUEST
+export const observableFetchUserRequest = () => ({
+    type: actionTypes.ob.FETCH_USERS_REQUEST
 });
 
-export const sagaFetchUserSuccess = data => ({
-    type: actionTypes.saga.FETCH_USERS_SUCCESS,
+export const observableFetchUserSuccess = data => ({
+    type: actionTypes.ob.FETCH_USERS_SUCCESS,
     data
 });
 
-export const sagaFetchUserError = err => ({
-    type: actionTypes.saga.FETCH_USERS_ERROR,
+export const observableFetchUserError = err => ({
+    type: actionTypes.ob.FETCH_USERS_ERROR,
     payload: err
 });
 

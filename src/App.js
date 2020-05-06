@@ -6,24 +6,24 @@ import * as actioncreators from './actioncreators';
 
 function App() {
   const state = useSelector(state => ({
-    sagaInfo: state.saga
+    obInfo: state.ob
   }));
   const dispatch  = useDispatch();
   useEffect(() => {
-    dispatch(actioncreators.sagaFetchUserRequest())
+    dispatch(actioncreators.observableFetchUserRequest())
   }, [dispatch])
 
-  const ListItems =  (state.sagaInfo.data || []).map(user => 
+  const ListItems =  (state.obInfo.data || []).map(user => 
      <li key={user.id}>{user.name} - {user.phone}</li>
   )
   return (
     <div className="App">
       <h3> Redux Async Action </h3>
       <header className="App-header">
-       {state.sagaInfo.loading && <span>Loading users...</span>}
+       {state.obInfo.loading && <span>Loading users...</span>}
        {
        <ul>
-        {!state.sagaInfo.loading &&  ListItems}
+        {!state.obInfo.loading &&  ListItems}
         </ul>
       } 
       </header>

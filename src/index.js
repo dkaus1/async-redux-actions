@@ -6,21 +6,22 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import rootReducer  from  './reducers';
-import createSagaMiddleware from 'redux-saga';
-import rootSaga from './sagas';
+import { createEpicMiddleware } from 'redux-observable';
 
-const sagaMiddleware = createSagaMiddleware();
+import rootEpic from './epics';
+
+const epicMiddleware = createEpicMiddleware();
 
 const store = createStore(
                 rootReducer,
                 compose(
-                  applyMiddleware(sagaMiddleware),
+                  applyMiddleware(epicMiddleware),
               window.__REDUX_DEVTOOLS_EXTENSION__ &&
                 window.__REDUX_DEVTOOLS_EXTENSION__(),
             )
                 );
 
-sagaMiddleware.run(rootSaga);
+                epicMiddleware.run(rootEpic);
 
 
 ReactDOM.render(
